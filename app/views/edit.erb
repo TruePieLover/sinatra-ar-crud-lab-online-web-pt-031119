@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Title:<%= @article.title %>
 Content <%= @article.content %>
 <form action="/articles/<%=@article.id %>" method="post">
@@ -5,4 +6,13 @@ Content <%= @article.content %>
   Title:<input type="text" name="title">
   Content:<input type="text" name="content">
   <input type="submit" name="submit">
+=======
+<form action="/articles/id" method="post">
+  <input id="hidden" type="hidden" name="_method" value="patch">
+  <label for="title"> </label>
+  <input type="text" id="title" value="<%= @article.title %>" name="article[title]">
+  <label for="content"> </label>
+  <input type="text" id="content" value="<%= @article.content %>" name="article[content]">
+  <input type="submit" value="Submit">
+>>>>>>> 6f7477ddd0119e860499e4a24cb20a806333cb37
 </form>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ENV['SINATRA_ENV'] ||= "development"
 
 require 'bundler/setup'
@@ -20,3 +21,14 @@ ActiveRecord::Base.establish_connection(
 )
 
 require_all 'app'
+=======
+require './config/environment'
+
+if ActiveRecord::Base.connection.migration_context.needs_migration?
+  raise 'Migrations are pending. Run `rake db:migrate` to resolve the issue.'
+end
+
+use Rack::MethodOverride
+
+run ApplicationController
+>>>>>>> 6f7477ddd0119e860499e4a24cb20a806333cb37
